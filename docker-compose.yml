@@ -3,11 +3,11 @@ web:
   ports:
     - "4001:80"
   volumes:
-    - ./api-v3:/var/www/html
+    - ./phpapp:/var/www/html
     - ./site.conf:/etc/nginx/conf.d/site.conf
   links:
     - php
 php:
   image: php:7.1.4-fpm
   volumes:
-    - ./api-v3:/var/www/html
+    - ./phpapp:/var/www/html
